@@ -354,9 +354,19 @@
 
     <script>
         // Funcionalidad del carrito
-        let cart = [];
+        function loadCart() {
+            const stored = localStorage.getItem('cart');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        let cart = loadCart();
         const cartIcon = document.querySelector('.cart-icon');
         const cartCount = document.querySelector('.cart-count');
+        updateCartCount();
         const cartModal = document.getElementById('cartModal');
         const cartItemsContainer = document.querySelector('.cart-items');
         const cartSubtotal = document.querySelector('.cart-subtotal');
@@ -391,6 +401,7 @@
             
             alert('¡Compra realizada con éxito! Gracias por tu compra en TATA.');
             cart = [];
+            saveCart();
             updateCartCount();
             cartModal.style.display = 'none';
         });
@@ -417,7 +428,8 @@
                         quantity: 1
                     });
                 }
-                
+
+                saveCart();
                 updateCartCount();
                 
                 // Mostrar confirmación visual
@@ -495,6 +507,7 @@
                         cart = cart.filter(item => item.id !== id);
                     }
                     
+                    saveCart();
                     updateCartCount();
                     updateCartDisplay();
                 });
@@ -505,6 +518,7 @@
                     const id = btn.dataset.id;
                     const item = cart.find(item => item.id === id);
                     item.quantity++;
+                    saveCart();
                     updateCartCount();
                     updateCartDisplay();
                 });
@@ -514,6 +528,7 @@
                 btn.addEventListener('click', () => {
                     const id = btn.dataset.id;
                     cart = cart.filter(item => item.id !== id);
+                    saveCart();
                     updateCartCount();
                     updateCartDisplay();
                 });
