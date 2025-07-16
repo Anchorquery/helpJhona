@@ -301,16 +301,59 @@
         </div>
     </footer>
 
-    <!-- Modal del carrito (igual que en la sección de niños) -->
+    <!-- Modal del carrito -->
     <div class="cart-modal" id="cartModal">
-        <!-- ... (mismo contenido que en ninos.html) ... -->
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Tu Carrito de Compras</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+
+            <div class="cart-items">
+                <!-- Los productos del carrito se añadirán dinámicamente aquí -->
+            </div>
+
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span class="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío:</span>
+                    <span>$5.99</span>
+                </div>
+                <div class="summary-row">
+                    <span>Descuento:</span>
+                    <span>-$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span class="cart-total">$5.99</span>
+                </div>
+            </div>
+
+            <div class="cart-actions">
+                <button class="btn continue-shopping">Continuar Comprando</button>
+                <button class="btn checkout">Finalizar Compra</button>
+            </div>
+        </div>
     </div>
 
     <script>
         // Funcionalidad del carrito
-        let cart = [];
+        function loadCart() {
+            const stored = localStorage.getItem('cart');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        let cart = loadCart();
         const cartIcon = document.querySelector('.cart-icon');
         const cartCount = document.querySelector('.cart-count');
+        updateCartCount();
         const cartModal = document.getElementById('cartModal');
         const cartItemsContainer = document.querySelector('.cart-items');
         const cartSubtotal = document.querySelector('.cart-subtotal');
@@ -345,6 +388,7 @@
             
             alert('¡Compra realizada con éxito! Gracias por tu compra en TATA.');
             cart = [];
+            saveCart();
             updateCartCount();
             cartModal.style.display = 'none';
         });
@@ -371,7 +415,8 @@
                         quantity: 1
                     });
                 }
-                
+
+                saveCart();
                 updateCartCount();
                 
                 // Mostrar confirmación visual
@@ -449,6 +494,7 @@
                         cart = cart.filter(item => item.id !== id);
                     }
                     
+                    saveCart();
                     updateCartCount();
                     updateCartDisplay();
                 });
@@ -459,6 +505,7 @@
                     const id = btn.dataset.id;
                     const item = cart.find(item => item.id === id);
                     item.quantity++;
+                    saveCart();
                     updateCartCount();
                     updateCartDisplay();
                 });
@@ -468,6 +515,7 @@
                 btn.addEventListener('click', () => {
                     const id = btn.dataset.id;
                     cart = cart.filter(item => item.id !== id);
+                    saveCart();
                     updateCartCount();
                     updateCartDisplay();
                 });

@@ -6,7 +6,6 @@
 
     <title>TATA - Moda Infantil de Calidad</title>
     <link rel="stylesheet" href="css/estilos-index.css">
-    <link href="js/scripts.js">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
 </head> 
@@ -31,6 +30,7 @@
             
             <div class="cart-icon">
                 <img src="img/carrito-de-compras.png" alt="Carrito">
+                <span class="cart-count">0</span>
             </div>
             
             <div class="hamburger">
@@ -251,61 +251,20 @@
         </div>
         
         <div class="cart-items">
-            <div class="cart-item">
-                <div class="item-image" style="background-color: #e0f7fa;"></div>
-                <div class="item-details">
-                    <h4>Body suave de algodón</h4>
-                    <p>Talla: 0-3 meses</p>
-                    <div class="item-quantity">
-                        <button class="quantity-btn minus">-</button>
-                        <span class="quantity">1</span>
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                </div>
-                <div class="item-price">
-                    <span>$15.99</span>
-                    <button class="remove-item">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="cart-item">
-                <div class="item-image" style="background-color: #fce4ec;"></div>
-                <div class="item-details">
-                    <h4>Pijama astronauta</h4>
-                    <p>Talla: 2 años</p>
-                    <div class="item-quantity">
-                        <button class="quantity-btn minus">-</button>
-                        <span class="quantity">1</span>
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                </div>
-                <div class="item-price">
-                    <span>$24.99</span>
-                    <button class="remove-item">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </div>
-            </div>
         </div>
         
         <div class="cart-summary">
             <div class="summary-row">
                 <span>Subtotal:</span>
-                <span>$40.98</span>
+                <span class="cart-subtotal">$0.00</span>
             </div>
             <div class="summary-row">
                 <span>Envío:</span>
                 <span>$5.99</span>
             </div>
-            <div class="summary-row">
-                <span>Descuento:</span>
-                <span>-$5.00</span>
-            </div>
             <div class="summary-row total">
                 <span>Total:</span>
-                <span>$41.97</span>
+                <span class="cart-total">$5.99</span>
             </div>
         </div>
         
@@ -423,7 +382,7 @@
         });
         
         // Lazy loading para imágenes
-        document.addEventListener("DOMContentLoaded", function() {
+        (function() {
             const lazyImages = [].slice.call(document.querySelectorAll("img[data-src]"));
             
             if ("IntersectionObserver" in window) {
@@ -441,115 +400,153 @@
                     lazyImageObserver.observe(lazyImage);
                 });
             }
-        });
+        })();
         
-         // Funcionalidad del carrito
-    document.addEventListener('DOMContentLoaded', function() {
-        const cartModal = document.getElementById('cartModal');
-        const cartIcon = document.querySelector('.cart-icon');
-        const closeCart = document.querySelector('.close-cart');
-        const continueShopping = document.querySelector('.continue-shopping');
-        
-        // Abrir modal del carrito
-        cartIcon.addEventListener('click', () => {
-            cartModal.style.display = 'block';
-            document.body.classList.add('cart-open');
-        });
-        
-        // Cerrar modal del carrito
-        closeCart.addEventListener('click', () => {
-            cartModal.style.display = 'none';
-            document.body.classList.remove('cart-open');
-        });
-        
-        // Continuar comprando
-        continueShopping.addEventListener('click', () => {
-            cartModal.style.display = 'none';
-            document.body.classList.remove('cart-open');
-        });
-        
-        // Cerrar al hacer clic fuera del modal
-        window.addEventListener('click', (e) => {
-            if (e.target === cartModal) {
+        // Funcionalidad del carrito
+        (function() {
+            const cartIcon = document.querySelector('.cart-icon');
+            const cartCount = document.querySelector('.cart-count');
+            const cartModal = document.getElementById('cartModal');
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartSubtotal = document.querySelector('.cart-subtotal');
+            const cartTotal = document.querySelector('.cart-total');
+            const closeCart = document.querySelector('.close-cart');
+            const continueShopping = document.querySelector('.continue-shopping');
+
+            let cart = loadCart();
+            updateCartCount();
+
+            cartIcon.addEventListener('click', () => {
+                cartModal.style.display = 'block';
+                document.body.classList.add('cart-open');
+                updateCartDisplay();
+            });
+
+            closeCart.addEventListener('click', () => {
                 cartModal.style.display = 'none';
                 document.body.classList.remove('cart-open');
-            }
-        });
-        
-        // Cambiar métodos de pago
-        const paymentMethods = document.querySelectorAll('.payment-method');
-        paymentMethods.forEach(method => {
-            method.addEventListener('click', () => {
-                paymentMethods.forEach(m => m.classList.remove('active'));
-                method.classList.add('active');
             });
-        });
-        
-        // Control de cantidad
-        const minusBtns = document.querySelectorAll('.quantity-btn.minus');
-        const plusBtns = document.querySelectorAll('.quantity-btn.plus');
-        
-        minusBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const quantitySpan = this.nextElementSibling;
-                let quantity = parseInt(quantitySpan.textContent);
-                if (quantity > 1) {
-                    quantitySpan.textContent = quantity - 1;
-                    updateCartTotal();
+
+            continueShopping.addEventListener('click', () => {
+                cartModal.style.display = 'none';
+                document.body.classList.remove('cart-open');
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === cartModal) {
+                    cartModal.style.display = 'none';
+                    document.body.classList.remove('cart-open');
                 }
             });
-        });
-        
-        plusBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const quantitySpan = this.previousElementSibling;
-                let quantity = parseInt(quantitySpan.textContent);
-                quantitySpan.textContent = quantity + 1;
-                updateCartTotal();
+
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.addEventListener('click', () => {
+                    document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+                    method.classList.add('active');
+                });
             });
-        });
-        
-        // Eliminar items
-        const removeBtns = document.querySelectorAll('.remove-item');
-        removeBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const cartItem = this.closest('.cart-item');
-                cartItem.style.animation = 'fadeOut 0.3s forwards';
-                
-                setTimeout(() => {
-                    cartItem.remove();
-                    updateCartTotal();
-                    
-                    // Si no quedan items, mostrar mensaje
-                    if (document.querySelectorAll('.cart-item').length === 0) {
-                        document.querySelector('.cart-items').innerHTML = `
-                            <div class="empty-cart">
-                                <i class="fas fa-shopping-cart"></i>
-                                <p>Tu carrito está vacío</p>
-                                <button class="btn continue-shopping">Continuar Comprando</button>
+
+            document.querySelector('.checkout').addEventListener('click', () => {
+                if (cart.length === 0) {
+                    alert('Tu carrito está vacío');
+                    return;
+                }
+                alert('¡Compra realizada con éxito! Gracias por tu compra en TATA.');
+                cart = [];
+                saveCart();
+                updateCartCount();
+                cartModal.style.display = 'none';
+            });
+
+            function loadCart() {
+                const stored = localStorage.getItem('cart');
+                return stored ? JSON.parse(stored) : [];
+            }
+
+            function saveCart() {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+
+            function updateCartCount() {
+                const totalItems = cart.reduce((t, i) => t + i.quantity, 0);
+                if (cartCount) cartCount.textContent = totalItems;
+            }
+
+            function updateCartDisplay() {
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Tu carrito está vacío</p>
+                        </div>`;
+                    cartSubtotal.textContent = '$0.00';
+                    cartTotal.textContent = '$5.99';
+                    return;
+                }
+
+                let itemsHTML = '';
+                let subtotal = 0;
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+                    itemsHTML += `
+                        <div class="cart-item">
+                            <div class="item-image" style="background-image: url('${item.image}')"></div>
+                            <div class="item-details">
+                                <h4>${item.name}</h4>
+                                <div class="item-quantity">
+                                    <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                    <span class="quantity">${item.quantity}</span>
+                                    <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                                </div>
                             </div>
-                        `;
-                        document.querySelector('.continue-shopping').addEventListener('click', () => {
-                            cartModal.style.display = 'none';
-                        });
-                    }
-                }, 300);
+                            <div class="item-price">
+                                <span>$${itemTotal.toFixed(2)}</span>
+                                <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>`;
+                });
+                cartItemsContainer.innerHTML = itemsHTML;
+                cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+                cartTotal.textContent = `$${(subtotal + 5.99).toFixed(2)}`;
+
+                document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.id;
+                        const item = cart.find(i => i.id === id);
+                        if (item.quantity > 1) {
+                            item.quantity--;
+                        } else {
+                            cart = cart.filter(i => i.id !== id);
+                        }
+                        saveCart();
+                        updateCartCount();
+                        updateCartDisplay();
+                    });
+                });
+
+                document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.id;
+                        const item = cart.find(i => i.id === id);
+                        item.quantity++;
+                        saveCart();
+                        updateCartCount();
+                        updateCartDisplay();
+                    });
+                });
+
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    cart = cart.filter(i => i.id !== id);
+                    saveCart();
+                    updateCartCount();
+                    updateCartDisplay();
+                });
             });
-        });
-        
-        // Actualizar total del carrito
-        function updateCartTotal() {
-            // En una implementación real, esto calcularía el total basado en los productos
-            // Aquí solo es un ejemplo estático
-            console.log("Total actualizado");
         }
-        
-        // Finalizar compra
-        document.querySelector('.checkout').addEventListener('click', function() {
-            alert('¡Compra realizada con éxito! Gracias por tu compra en TATA.');
-            cartModal.style.display = 'none';
-        });
-    });
+        })();
         
     </script>
 </body>
