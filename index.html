@@ -6,7 +6,6 @@
 
     <title>TATA - Moda Infantil de Calidad</title>
     <link rel="stylesheet" href="css/estilos-index.css">
-    <link href="js/scripts.js">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
 </head> 
@@ -383,7 +382,7 @@
         });
         
         // Lazy loading para imágenes
-        document.addEventListener("DOMContentLoaded", function() {
+        (function() {
             const lazyImages = [].slice.call(document.querySelectorAll("img[data-src]"));
             
             if ("IntersectionObserver" in window) {
@@ -401,10 +400,10 @@
                     lazyImageObserver.observe(lazyImage);
                 });
             }
-        });
+        })();
         
         // Funcionalidad del carrito
-        document.addEventListener('DOMContentLoaded', function() {
+        (function() {
             const cartIcon = document.querySelector('.cart-icon');
             const cartCount = document.querySelector('.cart-count');
             const cartModal = document.getElementById('cartModal');
@@ -537,17 +536,17 @@
                     });
                 });
 
-                document.querySelectorAll('.remove-item').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const id = btn.dataset.id;
-                        cart = cart.filter(i => i.id !== id);
-                        saveCart();
-                        updateCartCount();
-                        updateCartDisplay();
-                    });
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    cart = cart.filter(i => i.id !== id);
+                    saveCart();
+                    updateCartCount();
+                    updateCartDisplay();
                 });
-            }
-        });
+            });
+        }
+        })();
         
     </script>
 </body>
