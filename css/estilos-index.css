@@ -9,6 +9,7 @@
     --texto-medio: #555555;
     --blanco: #ffffff;
     --sombra: rgba(0, 0, 0, 0.1);
+    --descuento: #ff6b6b;
 }
 
 * {
@@ -148,11 +149,28 @@ header {
     display: flex;
     align-items: center;
     margin-left: 25px;
+    position: relative;
 }
 
 .cart-icon img {
     width: 49px;
     height: auto;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--descuento);
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
 .hamburger {
