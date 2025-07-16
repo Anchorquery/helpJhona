@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA - Moda para Niños</title>
+    <link rel="stylesheet" href="../css/estilos-ninos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+        <img src="../img/logo.png" alt="TATA Logo">
+      </a>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="infantes.html">Infantes</a></li>
+                    <li><a href="ninos.html" class="active">Niños</a></li>
+                    <li><a href="ninas.html">Niñas</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart-icon">
+                <img src="../img/carrito-de-compras.png" alt="Carrito">
+                <span class="cart-count">0</span>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner de categoría -->
+    <section class="category-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Colección para Niños</h1>
+                <p>Ropa cómoda y divertida para los pequeños aventureros</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo de productos -->
+    <section class="catalog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Moda para Niños</h2>
+                <p>Descubre nuestras prendas diseñadas para el estilo y la aventura</p>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="size-filter">Talla:</label>
+                    <select id="size-filter">
+                        <option value="all">Todas</option>
+                        <option value="2-4">2-4 años</option>
+                        <option value="4-6">4-6 años</option>
+                        <option value="6-8">6-8 años</option>
+                        <option value="8-10">8-10 años</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="category-filter">Categoría:</label>
+                    <select id="category-filter">
+                        <option value="all">Todas</option>
+                        <option value="camisas">Camisas</option>
+                        <option value="pantalones">Pantalones</option>
+                        <option value="conjuntos">Conjuntos</option>
+                        <option value="zapatos">Zapatos</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <button class="btn filter-btn">Aplicar Filtros</button>
+                </div>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-item" data-category="camisas">
+                    <div class="product-image" style="background-image: url(../img/camisa-rayas.jpg);"></div>
+                    <div class="product-info">
+                        <h3>Camisa a Rayas</h3>
+                        <p class="product-description">Camisa de algodón con rayas azules y blancas</p>
+                        <div class="product-meta">
+                            <span class="price">$24.99</span>
+                            <span class="size">4-6 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="9" data-name="Camisa a Rayas" data-price="24.99" data-image="img/camisa-rayas.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="product-item" data-category="pantalones">
+                    <div class="product-image" style="background-image: url(../img/jeans-clasicos.png);"></div>
+                    <div class="product-info">
+                        <h3>Jeans Clásicos</h3>
+                        <p class="product-description">Jeans resistentes con bolsillos reforzados</p>
+                        <div class="product-meta">
+                            <span class="price">$29.99</span>
+                            <span class="size">6-8 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="10" data-name="Jeans Clásicos" data-price="29.99" data-image="img/jeans-ninos.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-item" data-category="conjuntos">
+                    <div class="product-image" style="background-image: url(../img/conjunto-deportivo.jpg);"></div>
+                    <div class="product-info">
+                        <h3>Conjunto Deportivo</h3>
+                        <p class="product-description">Conjunto para deportes y actividades físicas</p>
+                        <div class="product-meta">
+                            <span class="price">$34.50</span>
+                            <span class="size">8-10 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="11" data-name="Conjunto Deportivo" data-price="34.50" data-image="img/conjunto-deportivo.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="product-item" data-category="camisas">
+                    <div class="product-image" style="background-image: url(../img/camisa-formal.jpg);"></div>
+                    <div class="product-info">
+                        <h3>Camisa Formal</h3>
+                        <p class="product-description">Camisa elegante para ocasiones especiales</p>
+                        <div class="product-meta">
+                            <span class="price">$27.99</span>
+                            <span class="size">6-8 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="12" data-name="Camisa Formal" data-price="27.99" data-image="img/camisa-formal.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 5 -->
+                <div class="product-item" data-category="zapatos">
+                    <div class="product-image" style="background-image: url(../img/zapato-sport.jpg);"></div>
+                    <div class="product-info">
+                        <h3>Zapatos Deportivos</h3>
+                        <p class="product-description">Zapatos cómodos para correr y jugar</p>
+                        <div class="product-meta">
+                            <span class="price">$39.99</span>
+                            <span class="size">Talla 28</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="13" data-name="Zapatos Deportivos" data-price="39.99" data-image="img/zapatos-deportivos.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 6 -->
+                <div class="product-item" data-category="conjuntos">
+                    <div class="product-image" style="background-image: url(../img/conjunto-de-playa.jpg);"></div>
+                    <div class="product-info">
+                        <h3>Conjunto de Playa</h3>
+                        <p class="product-description">Conjunto ligero para días de sol y arena</p>
+                        <div class="product-meta">
+                            <span class="price">$32.75</span>
+                            <span class="size">4-6 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="14" data-name="Conjunto de Playa" data-price="32.75" data-image="img/conjunto-playa.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 7 -->
+                <div class="product-item" data-category="pantalones">
+                    <div class="product-image" style="background-image: url(../img/short-aventureros.jpg);"></div>
+                    <div class="product-info">
+                        <h3>Shorts Aventureros</h3>
+                        <p class="product-description">Shorts resistentes con múltiples bolsillos</p>
+                        <div class="product-meta">
+                            <span class="price">$22.50</span>
+                            <span class="size">6-8 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="15" data-name="Shorts Aventureros" data-price="22.50" data-image="img/shorts-ninos.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 8 -->
+                <div class="product-item" data-category="zapatos">
+                    <div class="product-image" style="background-image: url(../img/sandalias-verano.jpg);"></div>
+                    <div class="product-info">
+                        <h3>Sandalias de Verano</h3>
+                        <p class="product-description">Sandalias cómodas para días calurosos</p>
+                        <div class="product-meta">
+                            <span class="price">$19.99</span>
+                            <span class="size">Talla 26</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="16" data-name="Sandalias de Verano" data-price="19.99" data-image="img/sandalias-ninos.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de beneficios -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Beneficios para Pequeños Exploradores</h2>
+                <p>Características que hacen nuestra ropa ideal para niños activos</p>
+            </div>
+            
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                    <img src="../img/telas-transpirables.png" alt="Devoluciones" style="width: 75px; height: 75px; border-radius: 50%;">
+                    </div>
+                    <h3>Telas Transpirables</h3>
+                    <p>Materiales que permiten la circulación de aire para mayor comodidad durante el juego</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                    <img src="../img/resistentes-al-desgaste.png" alt="Devoluciones" style="width: 75px; height: 75px; border-radius: 50%;">
+                    </div>
+                    <h3>Resistentes al Desgaste</h3>
+                    <p>Prendas reforzadas para soportar las actividades más intensas de los niños</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                    <img src="../img/faciles-lavar.png" alt="Devoluciones" style="width: 75px; height: 75px; border-radius: 50%;">
+                    </div>
+                    <h3>Fáciles de Lavar</h3>
+                    <p>Materiales que resisten manchas y se lavan fácilmente, incluso después de las aventuras más sucias</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../img/logo.png" alt="TATA Logo">
+                    </div>
+                    <p>TATA es una marca con más de 10 años de experiencia dedicada a la moda infantil, especializada en ropa para bebés y niños. Ofrecemos prendas de calidad que combinan comodidad, estilo y ternura, pensadas para acompañar cada etapa de su crecimiento con diseño y calidez.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="infantes.html">Infantes</a></li>
+                        <li><a href="ninos.html">Niños</a></li>
+                        <li><a href="ninas.html">Niñas</a></li>
+                        <li><a href="ofertas.html">Ofertas</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Benjamín Carrión Mora 132 y Av. Francisco de Orellana, Guayaquil</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone"></i>
+                            <span>+593 959411799</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>ventas@tata.com.ec</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock"></i>
+                            <span>Lun-Vie: 9:00-20:00 | Sáb: 10:00-14:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Boletín</h4>
+                    <p>Suscríbete para recibir ofertas exclusivas y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 TATA Moda Infantil. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal del carrito -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Tu Carrito de Compras</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+            
+            <div class="cart-items">
+                <!-- Los productos del carrito se añadirán dinámicamente aquí -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span class="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío:</span>
+                    <span>$5.99</span>
+                </div>
+                <div class="summary-row">
+                    <span>Descuento:</span>
+                    <span>-$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span class="cart-total">$5.99</span>
+                </div>
+            </div>
+            
+            <div class="cart-actions">
+                <button class="btn continue-shopping">Continuar Comprando</button>
+                <button class="btn checkout">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidad del carrito
+        let cart = [];
+        const cartIcon = document.querySelector('.cart-icon');
+        const cartCount = document.querySelector('.cart-count');
+        const cartModal = document.getElementById('cartModal');
+        const cartItemsContainer = document.querySelector('.cart-items');
+        const cartSubtotal = document.querySelector('.cart-subtotal');
+        const cartTotal = document.querySelector('.cart-total');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        // Abrir modal del carrito
+        cartIcon.addEventListener('click', () => {
+            cartModal.style.display = 'block';
+            document.body.classList.add('cart-open');
+            updateCartDisplay();
+        });
+        
+        // Cerrar modal del carrito
+        document.querySelector('.close-cart').addEventListener('click', () => {
+            cartModal.style.display = 'none';
+            document.body.classList.remove('cart-open');
+        });
+        
+        // Continuar comprando
+        document.querySelector('.continue-shopping').addEventListener('click', () => {
+            cartModal.style.display = 'none';
+            document.body.classList.remove('cart-open');
+        });
+        
+        // Finalizar compra
+        document.querySelector('.checkout').addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+            
+            alert('¡Compra realizada con éxito! Gracias por tu compra en TATA.');
+            cart = [];
+            updateCartCount();
+            cartModal.style.display = 'none';
+        });
+        
+        // Agregar productos al carrito
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productId = button.dataset.id;
+                const productName = button.dataset.name;
+                const productPrice = parseFloat(button.dataset.price);
+                const productImage = button.dataset.image;
+                
+                // Buscar si el producto ya está en el carrito
+                const existingItem = cart.find(item => item.id === productId);
+                
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({
+                        id: productId,
+                        name: productName,
+                        price: productPrice,
+                        image: productImage,
+                        quantity: 1
+                    });
+                }
+                
+                updateCartCount();
+                
+                // Mostrar confirmación visual
+                button.innerHTML = '<i class="fas fa-check"></i> Agregado';
+                button.classList.add('added');
+                
+                setTimeout(() => {
+                    button.innerHTML = 'Agregar al Carrito';
+                    button.classList.remove('added');
+                }, 1500);
+            });
+        });
+        
+        // Actualizar contador del carrito
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+        
+        // Actualizar visualización del carrito
+        function updateCartDisplay() {
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Tu carrito está vacío</p>
+                    </div>
+                `;
+                cartSubtotal.textContent = '$0.00';
+                cartTotal.textContent = '$5.99';
+                return;
+            }
+            
+            let itemsHTML = '';
+            let subtotal = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                itemsHTML += `
+                    <div class="cart-item">
+                        <div class="item-image" style="background-image: url('${item.image}')"></div>
+                        <div class="item-details">
+                            <h4>${item.name}</h4>
+                            <div class="item-quantity">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <span>$${itemTotal.toFixed(2)}</span>
+                            <button class="remove-item" data-id="${item.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItemsContainer.innerHTML = itemsHTML;
+            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            cartTotal.textContent = `$${(subtotal + 5.99).toFixed(2)}`;
+            
+            // Añadir eventos a los botones del carrito
+            document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    const item = cart.find(item => item.id === id);
+                    
+                    if (item.quantity > 1) {
+                        item.quantity--;
+                    } else {
+                        cart = cart.filter(item => item.id !== id);
+                    }
+                    
+                    updateCartCount();
+                    updateCartDisplay();
+                });
+            });
+            
+            document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    const item = cart.find(item => item.id === id);
+                    item.quantity++;
+                    updateCartCount();
+                    updateCartDisplay();
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    cart = cart.filter(item => item.id !== id);
+                    updateCartCount();
+                    updateCartDisplay();
+                });
+            });
+        }
+        
+        // Menú hamburguesa para móviles
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Cerrar menú al hacer clic en enlace
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Filtrar productos
+        document.querySelector('.filter-btn').addEventListener('click', () => {
+            const sizeFilter = document.getElementById('size-filter').value;
+            const categoryFilter = document.getElementById('category-filter').value;
+            
+            document.querySelectorAll('.product-item').forEach(item => {
+                const size = item.querySelector('.size').textContent.toLowerCase();
+                const category = item.dataset.category;
+                
+                let sizeMatch = true;
+                let categoryMatch = true;
+                
+                if (sizeFilter !== 'all') {
+                    if (sizeFilter === '2-4') sizeMatch = size.includes('2-4');
+                    else if (sizeFilter === '4-6') sizeMatch = size.includes('4-6');
+                    else if (sizeFilter === '6-8') sizeMatch = size.includes('6-8');
+                    else if (sizeFilter === '8-10') sizeMatch = size.includes('8-10');
+                }
+                
+                if (categoryFilter !== 'all') {
+                    categoryMatch = category === categoryFilter;
+                }
+                
+                if (sizeMatch && categoryMatch) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

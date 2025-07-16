@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA - Ofertas Especiales</title>
+    <link rel="stylesheet" href="../css/estilos-ofertas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/logo.png" alt="TATA Logo">
+                </a>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="infantes.html">Infantes</a></li>
+                    <li><a href="ninos.html">Niños</a></li>
+                    <li><a href="ninas.html">Niñas</a></li>
+                    <li><a href="ofertas.html" class="active">Ofertas</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart-icon">
+                <img src="../img/carrito-de-compras.png" alt="Carrito">
+                <span class="cart-count">0</span>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner de ofertas -->
+    <section class="ofertas-banner">
+        <div class="container">
+            <h1>¡Grandes Ofertas!</h1>
+            <p>Hasta 50% de descuento en prendas seleccionadas</p>
+        </div>
+    </section>
+
+    <!-- Sección de ofertas de temporada -->
+    <section class="ofertas-temporada">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ofertas de Temporada</h2>
+                <p>Productos seleccionados con descuentos especiales</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-item">
+                    <div class="product-image" style="background-image: url(../img/conjunto-deportivo-descuento.jpg);">
+                        <span class="discount-badge">-30%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Conjunto Deportivo</h3>
+                        <p class="product-description">Conjunto de dos piezas para actividades físicas</p>
+                        <div class="product-meta">
+                            <div>
+                                <span class="original-price">$35.99</span>
+                                <span class="discounted-price">$25.19</span>
+                            </div>
+                            <span class="size">4-5 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="25" data-name="Conjunto Deportivo" data-price="25.19" data-image="img/oferta1.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="product-item">
+                    <div class="product-image" style="background-image: url(../img/vestido-verano.png);">
+                        <span class="discount-badge">-40%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido de Verano</h3>
+                        <p class="product-description">Vestido ligero con estampado floral</p>
+                        <div class="product-meta">
+                            <div>
+                                <span class="original-price">$29.99</span>
+                                <span class="discounted-price">$17.99</span>
+                            </div>
+                            <span class="size">3-4 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="26" data-name="Vestido de Verano" data-price="17.99" data-image="img/oferta2.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-item">
+                    <div class="product-image" style="background-image: url(../img/pijama-dinosaurio.jpg);">
+                        <span class="discount-badge">-25%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pijama de Dinosaurios</h3>
+                        <p class="product-description">Pijama cómoda con divertido estampado</p>
+                        <div class="product-meta">
+                            <div>
+                                <span class="original-price">$22.50</span>
+                                <span class="discounted-price">$16.88</span>
+                            </div>
+                            <span class="size">5-6 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="27" data-name="Pijama de Dinosaurios" data-price="16.88" data-image="img/oferta3.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="product-item">
+                    <div class="product-image" style="background-image: url(../img/zapatos-brillantes.jpg);">
+                        <span class="discount-badge">-50%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Zapatos Brillantes</h3>
+                        <p class="product-description">Zapatos con detalles brillantes y ajuste cómodo</p>
+                        <div class="product-meta">
+                            <div>
+                                <span class="original-price">$39.99</span>
+                                <span class="discounted-price">$19.99</span>
+                            </div>
+                            <span class="size">Talla 28</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="28" data-name="Zapatos Brillantes" data-price="19.99" data-image="img/oferta4.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 5 -->
+                <div class="product-item">
+                    <div class="product-image" style="background-image: url(../img/chaqueta-acolchada.jpg);">
+                        <span class="discount-badge">-35%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chaqueta Acolchada</h3>
+                        <p class="product-description">Chaqueta cálida para días fríos</p>
+                        <div class="product-meta">
+                            <div>
+                                <span class="original-price">$45.00</span>
+                                <span class="discounted-price">$29.25</span>
+                            </div>
+                            <span class="size">6-7 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="29" data-name="Chaqueta Acolchada" data-price="29.25" data-image="img/oferta5.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 6 -->
+                <div class="product-item">
+                    <div class="product-image" style="background-image: url(../img/falda-con-volantes.jpg);">
+                        <span class="discount-badge">-20%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Falda con Volantes</h3>
+                        <p class="product-description">Falda elegante con volantes y cinturón</p>
+                        <div class="product-meta">
+                            <div>
+                                <span class="original-price">$27.99</span>
+                                <span class="discounted-price">$22.39</span>
+                            </div>
+                            <span class="size">4-5 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="30" data-name="Falda con Volantes" data-price="22.39" data-image="img/oferta6.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown para ofertas -->
+    <section class="countdown-section">
+        <div class="container countdown-container">
+            <h2 class="countdown-title">¡Oferta Relámpago!</h2>
+            <p>Estas ofertas terminan en:</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">15</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">12</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">45</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">30</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+            <button class="btn">Ver Todas las Ofertas</button>
+        </div>
+    </section>
+
+    <!-- Sección de ofertas relámpago -->
+    <section class="ofertas-relampago">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ofertas Relámpago</h2>
+                <p>Descuentos exclusivos por tiempo limitado</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Producto 7 -->
+                <div class="product-item">
+                    <div class="product-image" style="background-image: url(../img/conjunto-ba%C3%B1o.jpg);">
+                        <span class="discount-badge">-60%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Conjunto de Baño</h3>
+                        <p class="product-description">Conjunto de baño con protección UV</p>
+                        <div class="product-meta">
+                            <div>
+                                <span class="original-price">$34.99</span>
+                                <span class="discounted-price">$13.99</span>
+                            </div>
+                            <span class="size">5-6 años</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="31" data-name="Conjunto de Baño" data-price="13.99" data-image="img/relampago1.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 8 -->
+                <div class="product-item">
+                    <div class="product-image" style="background-image: url(../img/mochila-escolar.jpg);">
+                        <span class="discount-badge">-45%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mochila Escolar</h3>
+                        <p class="product-description">Mochila con diseño de superhéroes</p>
+                        <div class="product-meta">
+                            <div>
+                                <span class="original-price">$42.50</span>
+                                <span class="discounted-price">$23.38</span>
+                            </div>
+                            <span class="size">Única</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="32" data-name="Mochila Escolar" data-price="23.38" data-image="img/relampago2.jpg">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../img/logo.png" alt="TATA Logo">
+                    </div>
+                    <p>TATA es una marca con más de 10 años de experiencia dedicada a la moda infantil, especializada en ropa para bebés y niños. Ofrecemos prendas de calidad que combinan comodidad, estilo y ternura, pensadas para acompañar cada etapa de su crecimiento con diseño y calidez.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="infantes.html">Infantes</a></li>
+                        <li><a href="ninos.html">Niños</a></li>
+                        <li><a href="ninas.html">Niñas</a></li>
+                        <li><a href="ofertas.html">Ofertas</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Benjamín Carrión Mora 132 y Av. Francisco de Orellana, Guayaquil</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone"></i>
+                            <span>+593 959411799</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>ventas@tata.com.ec</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock"></i>
+                            <span>Lun-Vie: 9:00-20:00 | Sáb: 10:00-14:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Boletín</h4>
+                    <p>Suscríbete para recibir ofertas exclusivas y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 TATA Moda Infantil. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal del carrito -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Tu Carrito de Compras</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+            
+            <div class="cart-items">
+                <!-- Los productos del carrito se añadirán dinámicamente aquí -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span class="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío:</span>
+                    <span>$5.99</span>
+                </div>
+                <div class="summary-row">
+                    <span>Descuento:</span>
+                    <span>-$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span class="cart-total">$5.99</span>
+                </div>
+            </div>
+            
+            <div class="cart-actions">
+                <button class="btn continue-shopping">Continuar Comprando</button>
+                <button class="btn checkout">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidad del carrito
+        let cart = [];
+        const cartIcon = document.querySelector('.cart-icon');
+        const cartCount = document.querySelector('.cart-count');
+        const cartModal = document.getElementById('cartModal');
+        const cartItemsContainer = document.querySelector('.cart-items');
+        const cartSubtotal = document.querySelector('.cart-subtotal');
+        const cartTotal = document.querySelector('.cart-total');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        // Abrir modal del carrito
+        cartIcon.addEventListener('click', () => {
+            cartModal.style.display = 'block';
+            document.body.classList.add('cart-open');
+            updateCartDisplay();
+        });
+        
+        // Cerrar modal del carrito
+        document.querySelector('.close-cart').addEventListener('click', () => {
+            cartModal.style.display = 'none';
+            document.body.classList.remove('cart-open');
+        });
+        
+        // Continuar comprando
+        document.querySelector('.continue-shopping').addEventListener('click', () => {
+            cartModal.style.display = 'none';
+            document.body.classList.remove('cart-open');
+        });
+        
+        // Finalizar compra
+        document.querySelector('.checkout').addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+            
+            alert('¡Compra realizada con éxito! Gracias por tu compra en TATA.');
+            cart = [];
+            updateCartCount();
+            cartModal.style.display = 'none';
+        });
+        
+        // Agregar productos al carrito
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productId = button.dataset.id;
+                const productName = button.dataset.name;
+                const productPrice = parseFloat(button.dataset.price);
+                const productImage = button.dataset.image;
+                
+                // Buscar si el producto ya está en el carrito
+                const existingItem = cart.find(item => item.id === productId);
+                
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({
+                        id: productId,
+                        name: productName,
+                        price: productPrice,
+                        image: productImage,
+                        quantity: 1
+                    });
+                }
+                
+                updateCartCount();
+                
+                // Mostrar confirmación visual
+                button.innerHTML = '<i class="fas fa-check"></i> Agregado';
+                button.classList.add('added');
+                
+                setTimeout(() => {
+                    button.innerHTML = 'Agregar al Carrito';
+                    button.classList.remove('added');
+                }, 1500);
+            });
+        });
+        
+        // Actualizar contador del carrito
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+        
+        // Actualizar visualización del carrito
+        function updateCartDisplay() {
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Tu carrito está vacío</p>
+                    </div>
+                `;
+                cartSubtotal.textContent = '$0.00';
+                cartTotal.textContent = '$5.99';
+                return;
+            }
+            
+            let itemsHTML = '';
+            let subtotal = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                itemsHTML += `
+                    <div class="cart-item">
+                        <div class="item-image" style="background-image: url('${item.image}')"></div>
+                        <div class="item-details">
+                            <h4>${item.name}</h4>
+                            <div class="item-quantity">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <span>$${itemTotal.toFixed(2)}</span>
+                            <button class="remove-item" data-id="${item.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItemsContainer.innerHTML = itemsHTML;
+            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            cartTotal.textContent = `$${(subtotal + 5.99).toFixed(2)}`;
+            
+            // Añadir eventos a los botones del carrito
+            document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    const item = cart.find(item => item.id === id);
+                    
+                    if (item.quantity > 1) {
+                        item.quantity--;
+                    } else {
+                        cart = cart.filter(item => item.id !== id);
+                    }
+                    
+                    updateCartCount();
+                    updateCartDisplay();
+                });
+            });
+            
+            document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    const item = cart.find(item => item.id === id);
+                    item.quantity++;
+                    updateCartCount();
+                    updateCartDisplay();
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    cart = cart.filter(item => item.id !== id);
+                    updateCartCount();
+                    updateCartDisplay();
+                });
+            });
+        }
+        
+        // Menú hamburguesa para móviles
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Cerrar menú al hacer clic en enlace
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+  // Calcula 15 días desde que el usuario abre la página
+  const now = new Date().getTime();
+  const countdownDate = now + (15 * 24 * 60 * 60 * 1000); // 15 días en milisegundos
+
+  const countdownFunction = setInterval(function() {
+    const currentTime = new Date().getTime();
+    const distance = countdownDate - currentTime;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = String(days).padStart(2, '0');
+    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+    if (distance < 0) {
+      clearInterval(countdownFunction);
+      document.querySelector(".countdown").innerHTML = "<p>¡La oferta terminó!</p>";
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
