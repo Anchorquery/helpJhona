@@ -301,9 +301,42 @@
         </div>
     </footer>
 
-    <!-- Modal del carrito (igual que en la sección de niños) -->
+    <!-- Modal del carrito -->
     <div class="cart-modal" id="cartModal">
-        <!-- ... (mismo contenido que en ninos.html) ... -->
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Tu Carrito de Compras</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+
+            <div class="cart-items">
+                <!-- Los productos del carrito se añadirán dinámicamente aquí -->
+            </div>
+
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span class="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío:</span>
+                    <span>$5.99</span>
+                </div>
+                <div class="summary-row">
+                    <span>Descuento:</span>
+                    <span>-$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span class="cart-total">$5.99</span>
+                </div>
+            </div>
+
+            <div class="cart-actions">
+                <button class="btn continue-shopping">Continuar Comprando</button>
+                <button class="btn checkout">Finalizar Compra</button>
+            </div>
+        </div>
     </div>
 
     <script>
